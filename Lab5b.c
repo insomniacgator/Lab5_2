@@ -57,7 +57,7 @@ void Timer_Init() {
     // Load initial timer values
         // Sysclock / prescaler * desired seconds = timer period
     // I dunno WHY they call this TIMER0_TAIL_R and GPTMTAILR?
-    TIMER0_TAILR_R = 00050; //0.5ms // should we set these in HEX?
+    TIMER0_TAILR_R = 00400; //0.5ms // should we set these in HEX?
     //TIMER0_TBILR_R = 15000; //150ms
     //TIMER1_TAILR_R = 10000; //100ms
     //TIMER1_TBILR_R = 50000; //500ms

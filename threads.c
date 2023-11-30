@@ -58,6 +58,17 @@ void Idle_Thread(void) {
     while(1);
 }
 
+
+void DrawDisplay_Thread(void)
+{
+    // here we have to check an array to see how tall each line will be
+
+    while(1)
+    {
+        sleep(300);
+    }
+}
+
 void Sample_Thread(void)
 {
     // start timer for conversion at standard rate
@@ -139,6 +150,7 @@ void FFT_Thread(void)
             bucketLimits[i] = i * resolution;
         }
 
+
         // Increment the counts of each bucket depending on bucket limits and the resulting magnitudes
         for (i=0; i<(fftSize/2); i++)
         {
@@ -152,10 +164,11 @@ void FFT_Thread(void)
             }
         }
 
-        // Calculate the dominant frequency
-        float dominantFrequency = ((float)maxIndex * SAMPLING_FREQUENCY / (float)fftSize)/25.5;
 
-        int32_t freq = (int32_t)((dominantFrequency*1000));
+        // Calculate the dominant frequency
+        float dominantFrequency = ((float)maxIndex * SAMPLING_FREQUENCY / (float)fftSize);
+
+        int32_t freq = (int32_t)((dominantFrequency));
 
         //char *text_buffer[10];
         //sprintf(text_buffer, "%f", dominantFrequency);

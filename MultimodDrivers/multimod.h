@@ -16,6 +16,7 @@ static void multimod_init() {
     AudioInput_Init();
     PCA9956b_Init();
     UART_Init();
+    ST7789_Init();
 }
 
 #endif /* MULTIMOD_H_ */
